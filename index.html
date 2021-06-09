@@ -239,7 +239,26 @@ $(window).bind('scroll', function () {
 		});
 		</script>
 		
-		
+		<!-- Engagment Cateogory -->
+		<script>
+		$(document).ready(function(){
+		  $("#focuscatbutton").click(function(){
+			
+		    $(".focuscatdetail").show();
+		    $("#engagment").hide();
+		    $("#chart").hide();
+		  });
+		});
+		</script>
+		<script>
+		$(document).ready(function(){
+		  $(".focuscatdetail").click(function(){
+		    $(".focuscatdetail").hide();
+		    $("#engagment").show();
+		    $("#chart").show();
+		  });
+		});
+		</script>
 		
 
 	<!--[if IE]>
@@ -285,9 +304,17 @@ $(window).bind('scroll', function () {
 	<div class="panel" id="engagment">
 	
 			
-			<img src="images/engagement-score.png" alt="engagment" width="1237" height="531" />
+			<img src="images/engagement-score.png" alt="engagment" width="1237" height="484" />
+			
 		</div>
-	
+	<div class="focuscatdetail animate__animated animate__bounceIn">
+		<img src="images/focuscatdetail.png" alt="focuscatdetail" width="716" height="484" />
+		
+	</div>
+		
+	<div style="text-align: center;">
+		<a href="none"><img id="focuscatbutton" src="images/more-detail-button.png" alt="more-detail-button" width="170" height="62" /></a>
+	</div>
 																			
 	
 	<!-- Celebrate -->
@@ -410,43 +437,18 @@ $(window).bind('scroll', function () {
 
 		
 
-
+<div class="kskotitle wow fadeInDown">
+	<div class="kskotitleCenter">
+		<h3>Results by Demographics</h3>
+		Your scores by different segments
+	</div>
+</div>
 
 
 
 <!-- BREAKDOWNS -->
-<div class="sect" id="benchmark-container">
-	<h3 class="breakdownsh3">Results by Demographics</h3>
-	<span class="benchmark-container">
-		<span class="bench1">
-			<img src="images/breakdown1.png" alt="breakdown1" width="1250" height="500" usemap="#Map" border="0" />
-		    <map name="Map" id="Map">
-		      <area shape="rect" coords="12,60,206,99" id="openbreakdowndrop" href="#benchmark-container" />
-		      <area shape="rect" coords="576,53,663,108" id="drilldeptc" href="#benchmark-container" />
-			  <area shape="rect" coords="13,1,100,39" class="openbenchchart" href="#benchmark-container" />
-			  
-		      <area shape="rect" coords="921,7,1011,38" href="revealjs/demo_reveal.html#/8" target="_blank" />
-		    </map>
-	</span>
-	<span class="bench1b">
-			<img src="images/breakdown1b.png" alt="breakdown1b" width="1250" height="500" usemap="#Map7" border="0" />
-           
-            <map name="Map7" id="Map7">
-              <area shape="rect" id="breakdowndrillup" coords="291,51,386,108" href="#benchmark-container" />
-               <area shape="rect" coords="12,1,102,39" class="openbenchchart" href="#benchmark-container" />
-               <area shape="rect" coords="923,8,1013,40" href="revealjs/demo_reveal.html#/8" target="_blank" />
-            </map>
-	</span>
-		<span class="benchchart">
-			<img src="images/breakdown_chart.png" alt="breakdown1" width="1250" height="500" usemap="#Map1b" border="0" />
-	    <map name="Map1b" id="Map1b">
-		      
-			  <area shape="rect" coords="104,3,191,37" id="openbenchtable" href="#benchmark-container" />
-		    </map>
-		</span>
-		
-		
-  </span>
+<div class="sect wow fadeInDown" id="benchmark-container">
+	<img src="images/breeakdowns-act2x.png" alt="breeakdowns-act2x" width="1249" height="525" />
 </div>
 		<script>
 			window.addEventListener("hashchange", function () {

@@ -73,7 +73,10 @@ h3 {
 .highlightareafocus table{width: 1250px; margin: 0 auto; padding: 0; }
 
 .highlightbox {width: 360px; height: 200px; padding: 15px; display: block; background: #FFF; box-shadow: 0 0 13px 0 rgba(0,0,0,0.31); border-radius: 6px; }
+
 .highlightbox:hover {border: 1px solid #007FA7; border-radius: 6px; margin: -1px; transform: scale(1.07);}
+
+.focuscatdetail {width: 726px; height: 484px; margin: 50px auto -50px auto; padding: 10px; display: block; background: #FFF; box-shadow: 0 0 13px 0 rgba(0,0,0,0.31); border-radius: 6px; text-align: center;}
 
 
 .kskotitle {background:#efefef; color: #000; margin: 50px 0 20px 0;}
@@ -93,12 +96,12 @@ div.top3 {display: none; margin: 0px 0 20px 0; }
 .chooseReport {position: fixed; top: 110px; z-index: 11; display: none; }
 .chooseReport2 { position: fixed; top: 31px; z-index: 11; display: none;}
 
- 
+.focuscatdetail {display: none;}
 #where-to-focus-detail {display: none;}
 
 span.multcompareitems {display: none;}
 span.multcomparetable {display: none;}
-span.benchmark-container {display: none;}
+
 span.comtable {display: none;}
 span.comchartclick {display: none;}
 span.commentsbenchmarkspan {display: none;}
