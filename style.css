@@ -13,10 +13,12 @@ body {
 {
      
      
-     position: absolute;
-     top: 280px;
-     left: 1240px;
-     width: 253px;
+     position: relative;
+     top: 130px;
+     width: 1200px;	
+     display: block;
+     margin: 0 auto;
+     text-align: right;
 }
 
 .chartContainer {
