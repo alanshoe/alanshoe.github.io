@@ -1,118 +1,265 @@
 body {
-	
+	background: #F4F4F4;
 	list-style: none;
     @import url('https://fonts.googleapis.com/css?family=Roboto');
-    font-family: 'Roboto-Regular','Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
 }
-.logo {background: #FFF; text-align: center; }
+.sect { display: block; float: none; width: 1250px; margin: 0 auto; background: url(images/section-closed-icon.png) top right no-repeat #FFF;}
+.open {background: url(images/section-open-icon.png) top right no-repeat #FFF;}
 
-
-#download
-{
-     
-     
-     position: relative;
-     top: 130px;
-     width: 1200px;	
-     display: block;
-     margin: 0 auto;
-     text-align: right;
-}
-
-.chartContainer {
-	position:absolute;
-	top: 430px;
-	width: 100%;
-	height: 106px;
+.breakdown {margin-top: 20px;}
+.top {margin-bottom: 20px;}
+.pageContainer{
+	width: 1250px;
+	margin: 0 auto;
 	
 }
-#chart {
-	display: block;
-	margin: 0 auto;
-	width: 1000px;
-	z-index: 1001;
-}
-
-#header-graphic {background-image: linear-gradient(180deg, #283C46 0%, #475C66 100%);}
-#where-to-focus {margin: 0; padding: 0;}
-#what-to-celebrate {margin: 0; padding: 0;}
-#comments {} #comments h3{text-align: left;}
-
-.greyback {background: #4A4A4A; padding-bottom: 20px;}
-.blackbar {background: url(images/black-back.png) repeat-x top;}
-
-.nodeinfosm {text-align: center; height: 140px; background-image: linear-gradient(270deg, #5D63D3 0%, #585ECB 50%, #2C3085 52%, #262B7C 100%);}
-.nodefixedsm {display: none; text-align: center; position: fixed; height:34px; top:0px; width: 100%; background-image: linear-gradient(270deg, #5D63D3 0%, #262B7C 100%); z-index: 1002; margin-bottom: 20px; cursor: pointer;}
-
-.panel {
-	text-align: left;
-}
-
-/** End Detail **/
 h3 {
 	font-family: 'Roboto-Regular','Roboto';
 	font-weight: lighter;
 	font-size: 21px;
-	color: #007599; 
+	color: #4A4A4A; 
 	margin: 0; 
 	padding: 20px 10px;
-	
+	margin-top: 20px;
 	cursor: pointer;
 }
-.sect { display: block; float: none; width: 1250px; margin: 10px auto; background: #FFF;}
-/** .sect { display: block; float: none; width: 1250px; margin: 10px auto; background: url(images/section-closed-icon.png) top right no-repeat #FFF;}  88/
-
-/*   KSKO */
-
-.showDetail {width: 1210px; margin: 30px auto 0 auto; text-align: center; padding: 20px 0 0 0; display: block; float: none; background: #FFF; box-shadow: 0 0 13px 0 rgba(0,0,0,0.31); border-radius: 6px;}
-
-.showDetail1c, .showDetail2c, .showDetail3c  {display: none;}
-.showDetail1f, .showDetail2f, .showDetail3f  {display: none;}
-
-.highlightarea {margin: 20px 0 0 0;}
-.highlightarea table{width: 1250px; margin: 0 auto; padding: 0; }
-
-.highlightareafocus {margin: 30px 0 0 0;}
-.highlightareafocus table{width: 1250px; margin: 0 auto; padding: 0; }
-
-.highlightboxtop {width: 1200px; padding: 15px; display: block; background: none; border:none; }
-.highlightbox {width: 360px; padding: 15px; display: block; background: #FFF; box-shadow: 0 0 13px 0 rgba(0,0,0,0.31); border-radius: 6px; }
-
-.highlightbox:hover {border: 1px solid #007FA7; border-radius: 6px; margin: -1px; transform: scale(1.07);}
-
-.focuscatdetail {width: 726px; height: 484px; margin: 50px auto -50px auto; padding: 10px; display: block; background: #FFF; box-shadow: 0 0 13px 0 rgba(0,0,0,0.31); border-radius: 6px; text-align: center;}
 
 
-.kskotitlew {background:none; color: #000; margin: 0; display: block;}
-.kskotitlew .kskotitleCenter {padding: 0;}
-.kskotitlew .kskotitleCenter h3{
-	margin: 50px 0 0 0; padding: 0;
+.KSKOcard table {width: 100%;}
+.KSKOcard td {border:1px dotted red;}
+
+.logo {background: #FFF; text-align: center; }
+
+/** Node Info Alternatives **/
+.nodeinfosm {text-align: center; height: 60px; background: #585858; cursor: pointer;}
+.nodefixedsm {display: none; text-align: center; position: fixed; height:34px; top:0px; width: 100%; background: #585858; z-index: 1002; margin-bottom: 20px; cursor: pointer;}
+
+
+
+/** Node Info Alternatives **/
+
+.ribbon ul {margin: 0 0 0 0; padding: 0 0 20px 10px; height: 120px; list-style: none; display: block; background: #FFF;}
+.ribbon li {
+    float: left;
+    position: relative;
+    z-index: 5;
+	
+}
+.highestrated ul li {padding-top: 10px;}
+.ribbon li:hover {
+   
+    z-index: 7;
+    cursor: default;
 }
 
-.kskotitle {background:#efefef; color: #000; margin: 50px 0 20px 0;}
-.kskotitleCenter {width: 1250px; margin: auto; padding: 20px 0; display: block;}
-.kskotitleCenter h3{
-	margin: 0; padding: 0;
-	font-family: Roboto-Light, Roboto;
-	font-weight: lighter;
-	font-size: 36px;
-	color: #5D6776;
+.ribbon ul li:hover {
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+	border: 1px solid #FFF;
+	margin: 4px 13px 4px 0;
+	cursor: pointer;
+	}
+
+.ribbon ul li {
+    margin: 5px 15px 5px 0;
+    
+    padding: 1px;
+    width: 136px;
+    height: 115px;
+    text-align: center;
+    background-color: #E9E9F2;
+    border-radius: 8px;
 }
-/*   END KSKO */
+.ribbon ul li.green1 {background-color: #BBD782;}
+.ribbon ul li.green2 {background-color: #CFE1AC;}
+.ribbon ul li.red1 {background-color: #F7E8E7;}
+.ribbon ul li.red2 {background-color: #F0B4B0;}
+
+.ribbon ul li.blue7 {background-color: #9BC5FF;}
+.ribbon ul li.blue6 {background-color: #ABD0FF;}
+.ribbon ul li.blue5 {background-color: #ABD0FF;}
+.ribbon ul li.blue4 {background-color: #BEDBFF;}
+.ribbon ul li.blue3 {background-color: #D2E6FF;}
+.ribbon ul li.blue2 {background-color: #D2E6FF;}
+.ribbon ul li.blue1 {background-color: #E8F3FF;}
+.ribbon ul li.blue {background-color: #F3F9FF;}
+
+.ribbon ul li.white {background-color: #FFF; border: 1px solid #BEBEBE;}
+
+li.active{
+	
+border: 3px solid #FFFFFF;
+box-shadow: 0 0 5px 0 rgba(0,0,0,0.50);
+margin: -1px -1px -1px -1px;
+z-index: 6;
+
+}
+
+.score {
+	font-family: 'Roboto-Thin','Roboto';
+	font-size: 29px;
+	color: #666;
+	letter-spacing: -1.25px;
+	text-align: center;
+	display: block;
+	padding: 8px 0 0px 0;
+}
+.category {
+	font-family: 'Roboto-Regular','Roboto';
+	font-size: 13px;
+	color: #4A4A4A;
+	text-align: center;
+	display: block;
+	padding: 3px 0;
+	height: 30px;
+}
+.change {
+	font-family: 'Roboto-Regular','Roboto';
+	font-size: 20px;
+	color: #000000;
+	letter-spacing: 0.03px;
+	text-align: center;
+	display: block;
+}
+
+.pos {color: #36B785;}
+.neg {color: #F24965;}
+
+/** ToolTip **/
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  z-index: 10;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+ 
+  bottom: -185px;
+  left: -740px;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {position: absolute;}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+   z-index: 100;
+}
+
+/** Detail **/
+.detailksko {
+  position: relative;
+  display: inline-block;
+  z-index: 10;
+  
+}
+
+.detailpanelksko {
+	display: none;
+  position: absolute;
+  top: -328px;
+  bottom: 0px;
+  left: 432px;
+}
+
+
+
+
+/** Detail actions **/
+.detailkskoactions {
+  position: relative;
+  display: inline-block;
+  z-index: 10;
+}
+
+.detailactions {
+  display: none;
+  position: absolute;
+  top: -272px;
+  bottom: 0px;
+  left: 608px;
+}
+
+
+.detailactionsSecond {
+  display: none;
+  position: absolute;
+  top: -272px;
+  bottom: 0px;
+  left: 170px;
+}
+
+.detailactionsThird {
+  display: none;
+  position: absolute;
+  top: -272px;
+  bottom: 0px;
+  left: 450px;
+}
+
+/** Actions Added **/
+.actionsadded {
+  position: relative;
+  display: inline-block;
+  z-index: 10;
+}
+
+.actionsaddedmessage {
+	display: none;
+  position: absolute;
+  top: -90px;
+  bottom: 0px;
+  left: 920px;
+}
+
+
+/** Actions panel **/
+
+.actionsaddedpanel {
+	position: relative;
+  display: inline-block;
+  top: 20px;
+
+  
+
+}
+
+.actionsaddedpaneldetail {
+	display: none;
+  position: absolute;
+  top: -525px;
+  bottom: 0px;
+  left: 890px;
+  z-index: 1000;
+}
+}
+
+
+
+/** End Detail **/
 
 div.top2 {display: block; margin: 40px 0 20px 0;}
 div.top3 {display: none; margin: 0px 0 20px 0; }
 
+.chooseReport {position: fixed; top: 110px; z-index: 11; display: none; }
+.chooseReport2 { position: fixed; top: 31px; z-index: 11; display: none;}
 
-
-.focuscatdetail {display: none;}
-#where-to-focus-detail {display: none;}
+span.benchmarkcontainer {display: none;}   
 
 span.multcompareitems {display: none;}
 span.multcomparetable {display: none;}
-
+span.benchmark-container {display: none;}
 span.comtable {display: none;}
 span.comchartclick {display: none;}
 span.commentsbenchmarkspan {display: none;}
@@ -130,58 +277,3 @@ ul.mostimproved {display: none;}
 .bench4 {display: none;}
 .bench5 {display: none;}
 
-
-
-
-
-
-.scroll-hint {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%); }
-          
-          
-
-
-/* WOW Files */
-
-h1 {
-  font-size:     72px;
-  line-height:   1.5;
-  color: #2c3e50;
-  font-weight:   100;
-}
-
-#container {
-  width:  980px;
-  margin: 0 auto;
-}
-
-section {
-  height: 300px;
-  margin: 60px 0;
-}
-
-.section--purple {
-  background-color: #9b59b6;
-}
-
-.section--blue {
-  background-color: #3498db;
-}
-
-.section--green {
-  background-color: #2ecc71;
-}
-
-#main {
-  text-align: center;
-}
-
-#more {
-  margin: 20px auto 48px;
-}
- 

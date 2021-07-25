@@ -1,52 +1,972 @@
-<!doctype html>
-
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta charset="utf-8">
-  <title>WOW</title>
-  <link rel="stylesheet" href="css/libs/animate.css">
-  <link rel="stylesheet" href="css/site.css">
-  <style>
-    .wow:first-child {
-      visibility: hidden;
-    }
-  </style>
-  <!--[if IE]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-</head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Engagement Dashboard</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="dropdown.css">
+	<link rel="stylesheet" type="text/css" href="fullscreen.css">
+	<script src="jquery.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
 
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	
+	
+	
+		
+		<!-- Drop down change of Ribbon -->
+		<script>
+		$(document).ready(function(){
+		  $("#showhighestscore").click(function(){
+		    $("ul.highestrated").show();
+		    $("ul.mostimproved").hide();
+		    $(".dropdown-content").visibility('hidden');
+		  });
+		});
+		</script>
+		<script>
+		$(document).ready(function(){
+		  $("#showmostimproved").click(function(){
+		    $("ul.highestrated").hide();
+		    $("ul.mostimproved").show();
+		  });
+		});
+		</script>
+		<!-- This is the dropdown link to multiple benchmarks -->
+		<script>
+		$(document).ready(function(){
+		  $("#dropdownmultiple").click(function(){
+			$("ul.highestrated").hide();
+		    $("ul.mostimproved").hide();
+		    $("div.dropdown").toggle();
+		    $(".benchmarkcontainer").toggle();
+		    
+		  });
+		});
+		</script>
+		
+		<!-- Accordion for Ribbon -->
+		<script>
+		$(document).ready(function(){
+		  $(".catoverview").click(function(){
+		    $("ul.mostimproved").slideToggle();
+		    $("div.dropdown").toggle();
+		  });
+		});
+		</script>
+		
+		<!-- Accordion for Benchmarks -->
+		<script>
+		$(document).ready(function(){
+		  $(".multcompareh3").click(function(){
+		    $(".benchmarkcontainer").slideToggle();
+		    $("#multcomparecontainer").toggleClass( "open" );
+		  });
+		});
+		</script>
+		
+		
+		
+		
+		<!-- Accordion for Breakdowns -->
+		<script>
+		$(document).ready(function(){
+		  $(".breakdownsh3").click(function(){
+		    $(".benchmark-container").slideToggle();
+		     $(".bench1").show();
+		     $(".bench1b").hide();
+		     $(".bench2").hide();
+		     $(".bench3").hide();
+		     $(".bench4").hide();
+		     $(".bench5").hide();
+		     $(".benchchart").hide ();
+		     $("#benchmark-container").toggleClass( "open" );
+		  });
+		});
+		</script>
+		
+		<!-- Multiple Benchmarks item drilldown -->
+		<script>
+		$(document).ready(function(){
+		  $("#catdrill").click(function(){
+		    $(".multcompare").hide();
+		    $(".multcompareitems").show();
+		  });
+		});
+		</script>
+		<script>
+		$(document).ready(function(){
+		  $("#catdrillup").click(function(){
+		    $(".multcompare").show();
+		    $(".multcompareitems").hide();
+		  });
+		});
+		</script>
+		
+		
+		<!-- Accordion for Comments -->
+		<script>
+		$(document).ready(function(){
+		  $(".commentsh3").click(function(){
+			  $("#commentscontainericon").toggleClass( "open" );
+			  
+		    $(".commentscontainer").slideToggle();
+		    $(".commentsbenchmarkspan").hide(); 
+			$(".commentsbreakdownspan").hide();
+		    $(".comchartclick").hide();
+		    $(".comtable").hide();
+		    $(".comchart").show();
+		  });
+		});
+		</script>
+		<!-- Toggle between table ane chart on the comments -->
+		<script>
+		$(document).ready(function(){
+		  $("#commentstable").click(function(){
+		    $(".commentsbenchmarkspan").hide(); 
+			$(".commentsbreakdownspan").hide();
+		    $(".comchart").hide();
+		    $(".comchartclick").hide();
+		    $(".comtable").show();
+		    
+		  });
+		});
+		</script>
+			
+		<script>
+		$(document).ready(function(){
+		  $("#commentschart").click(function(){
+		    $(".commentsbenchmarkspan").hide(); 
+			$(".commentsbreakdownspan").hide();
+		    $(".comtable").hide();
+		    $(".comchartclick").hide();
+		    $(".comchart").show();
+		    
+		  });
+		});
+		</script>
+		
+		<script>
+		$(document).ready(function(){
+		  $("#commentschart2").click(function(){
+		    $(".commentsbenchmarkspan").hide(); 
+			$(".commentsbreakdownspan").hide();
+		    $(".comtable").hide();
+		    $(".comchartclick").hide();
+		    $(".comchart").show();
+		    
+		  });
+		});
+		</script>
+
+		<script>
+		$(document).ready(function(){
+		  $("#commentschartclick").click(function(){
+		    $(".commentsbenchmarkspan").hide(); 
+			$(".commentsbreakdownspan").hide();
+		    $(".comchartclick").show();
+		    $(".comchart").hide();
+		    $(".comtable").hide();
+		    
+		  });
+		});
+		</script>
+		
+		<script>
+		$(document).ready(function(){
+		  $(".commentsbenchmark").click(function(){
+			$(".commentsbenchmarkspan").show(); 
+			$(".commentsbreakdownspan").hide();
+		    $(".comchartclick").hide();
+		    $(".comchart").hide();
+		    $(".comtable").hide();
+		  });
+		});
+		</script>
+		<script>
+		$(document).ready(function(){
+		  $(".commentsbreakdown").click(function(){
+		    $(".commentsbreakdownspan").show();
+		    $(".commentsbenchmarkspan").hide(); 
+		    $(".comchartclick").hide();
+		    $(".comchart").hide();
+		    $(".comtable").hide();
+		  });
+		});
+		</script>
+		
+		<script>
+		$(document).ready(function(){
+		  $(".commentsbreakdownoff").click(function(){
+		    $(".commentsbreakdownspan").hide();
+		    $(".comchart").show();
+		  });
+		});
+		</script>
+		<script>
+		$(document).ready(function(){
+		  $(".commentsbenchmarkoff").click(function(){
+		    $(".commentsbenchmarkspan").hide();
+		    $(".comchart").show();
+		  });
+		});
+		</script>
+		
+		
+		
+		<!-- Multiple Benchmarks table vs chart drilldown -->
+		<script>
+		$(document).ready(function(){
+		  $(".multcompare #benchtable").click(function(){
+		    $(".multcompare").hide();
+		    $(".multcomparetable").show();
+		  });
+		});
+		</script>
+		
+		<script>
+		$(document).ready(function(){
+		  $(".multcomparetable #benchchart").click(function(){
+		    $(".multcompare").show();
+		    $(".multcomparetable").hide();
+		  });
+		});
+		</script>		
+
+		
+		<!-- Toggle between table ane chart view -->
+		<script>
+		$(document).ready(function(){
+		  $("#openbenchtable").click(function(){
+		    $(".benchchart").hide();
+		    $(".bench1").show();
+		  });
+		});
+		</script>
+			
+		<script>
+		$(document).ready(function(){
+		  $(".openbenchchart").click(function(){
+			$(".benchchart").show();
+		    $(".bench1").hide();
+		    $(".bench1b").hide();
+		    $(".bench2").hide();
+		    $(".bench3").hide();
+		    $(".bench4").hide();
+		    $(".bench5").hide();
+		    
+		  });
+		});
+		</script>
+		
+		<script>
+		$(document).ready(function(){
+		  $("#drilldeptc").click(function(){
+		    $(".bench1b").show();
+		    $(".bench1").hide();
+		  });
+		});
+		</script>
+
+		<!-- Breakdown switcher -->
+		<script>
+		$(document).ready(function(){
+		  $("#openbreakdowndrop").click(function(){
+		    $(".bench2").show();
+		    $(".bench1").hide();
+		  });
+		});
+		</script>
+		<script>
+		$(document).ready(function(){
+		  $("#opentenurebreakdown").click(function(){
+		    $(".bench3").show();
+		    $(".bench2").hide();
+		  });
+		});
+		</script>
+		<script>
+		$(document).ready(function(){
+		  $("#closetenurebreakdown").click(function(){
+		    $(".bench2").hide();
+		    $(".bench1").show();
+		  });
+		});
+		</script>
+		
+		<script>
+		$(document).ready(function(){
+		  $("#openlayerdbreakdown").click(function(){
+		    $(".bench4").show();
+		    $(".bench3").hide();
+		  });
+		});
+		</script>
+		
+		<script>
+		$(document).ready(function(){
+		  $("#closelayerdbreakdown").click(function(){
+		    $(".bench4").hide();
+		    $(".bench5").hide();
+		    $(".bench3").show();
+		  });
+		});
+		</script>
+		<script>
+		$(document).ready(function(){
+		  $("#cell-detail").click(function(){
+		    $(".bench4").hide();
+		    $(".bench5").show();
+		  });
+		});
+		</script>
+		<script>
+		$(document).ready(function(){
+		  $("#cell-detail-close").click(function(){
+		    $(".bench5").hide();
+		    $(".bench4").show();
+		  });
+		});
+		</script>
+		
+		<script>
+		$(document).ready(function(){
+		  $("#breakdowndrillup").click(function(){
+		    $(".bench1b").hide();
+		    $(".bench1").show();
+		  });
+		});
+		</script>
+		
+		<script>
+		$(document).ready(function(){
+		  $("#ksko1").click(function(){
+		    $(".top2").hide();
+		    $(".top3").show();
+		  });
+		});
+		</script>
+		
+		
+		<script>
+		$(document).ready(function(){
+		  $("#ksko2").click(function(){
+		    $(".top3").hide();
+		    $(".top2").show();
+		    
+		  });
+		});
+		</script>
+
+</head>
 <body>
-  <div id="container">
-    <header>
-      <h1>WOW.js</h1>
-    </header>
-    <div id="main">
-      <section class="wow fadeInDown" style="background-color: #f1c40f;"></section>
-      <section class="wow pulse" style="background-color: #e74c3c;" data-wow-iteration="infinite" data-wow-duration="1500ms"></section>
-      <section class="section--purple wow slideInRight" data-wow-delay="2s"></section>
-      <section class="section--blue wow bounceInLeft" data-wow-offset="300"></section>
-      <section class="section--green wow slideInLeft" data-wow-duration="4s"></section>
-      <button id="moar">LOAD MOAR!!</button>
+	
+
+	
+	<div class="logo" id="pageTop"><img src="images/header2x.png" alt="header" width="1270" height="52" id="pageheader" /></div>
+	 <div class="nodeinfosm" >
+			<img src="images/node-info-dk.png" alt="node-info-sm" width="1246" height="59" border="0" />
+		
+	</div>
+	<div class="nodefixedsm" >
+			<img src="images/node-info-med-dk.png" alt="node-info-sm" width="1246" height="34" border="0" />
+		
+	</div>
+	 <script>
+		$(document).ready(function(){
+		  $("#moreDetail").click(function(){
+		    $(".detailpanelksko").toggle();
+		    $(".detailactions").hide();
+		  });
+		});
+		$(document).ready(function(){
+		  $("#moreDetail2").click(function(){
+		    $(".detailpanelksko").toggle();
+		  });
+		});
+	</script>
+	
+	<script>
+		$(document).ready(function(){
+		  $("#moreAction").click(function(){
+		    $(".detailactions").toggle();
+		    $(".detailpanelksko").hide();
+		  });
+		});
+		
+		<!-- Udemy Included Actions ---------------------------------------------------------------------------------- -->
+		
+		
+		$(document).ready(function(){
+		  $("#moreActionSecond").click(function(){
+		    $(".detailactionsSecond").toggle();
+		    $(".detailpanelksko").hide();
+		    $(".detailactionsThird").hide();
+		    
+		  });
+		});
+		
+		$(document).ready(function(){
+		  $("#moreActionThird").click(function(){
+		    $(".detailactionsThird").toggle();
+		    $(".detailpanelksko").hide();
+		    $(".detailactionsSecond").hide();
+		    $(".detailactions").hide();
+		    
+		  });
+		});
+		
+		<!-- END Udemy Actions ----------------------------------------------------------------------------------------- -->
+		
+		$(document).ready(function(){
+		  $("#moreAction2").click(function(){
+			$('#pageheader').attr('src','images/header-action.png');
+			$(".actionsaddedmessage").show();
+			$(".detailactions").toggle();
+		    
+		  });
+		});
+		
+		$(document).ready(function(){
+		  $("#pageTop").click(function(){
+		    $(".actionsaddedmessage").hide();
+		    $(".actionsaddedpaneldetail").show();
+		  });
+		});
+		
+		$(document).ready(function(){
+		  $("#actionsaddedpaneldetailshow").click(function(){
+		    $(".actionsaddedpaneldetail").hide();
+		  });
+		});
+		
+		
+	</script>
+	
+	
+	
+	
+	
+	
+	<div class="pageContainer">
+		<div class="chooseReport">
+			<img src="images/report-chooser.png" alt="report-chooser" width="399" height="525" usemap="#Map16" border="0" />
+            <map name="Map16" id="Map16">
+              <area shape="rect" coords="322,403,379,449" href="create.html" />
+            </map>
+		</div>
+		<div class="chooseReport2">
+			<img src="images/report-chooser.png" alt="report-chooser" width="399" height="525" usemap="#Map17" border="0" />
+            <map name="Map17" id="Map17">
+              <area shape="rect" coords="325,402,379,450" href="create.html" />
+            </map>
+		</div>
+		
+			
+		
+			
+		<div class="top2" id="ribbonchange">
+			<span class="actionsadded">
+				<span class="actionsaddedmessage" id="actionsaddedclickmessage">
+					<img src="images/action-added.png" alt="action-added" width="332" height="80" />
+				</span>
+			</span>
+			
+			
+			<img src="images/top2udemy.png" alt="top2" width="1248" height="390" usemap="#Map14" border="0" />
+			
+			<map name="Map14" id="Map14">
+            <area shape="rect" coords="512,18,713,57" id="ksko1" href="#strengths" />
+			<area shape="rect" coords="358,320,445,356" id="moreDetail" href="#More" border="none"/>
+			<area shape="rect" coords="525,322,631,361" id="moreAction" href="#act" />
+			<area shape="rect" coords="831,327,928,358" id="moreActionSecond" href="#actSecond" />
+            <area shape="rect" coords="1112,321,1223,359" id="moreActionThird" href="#actThird" />
+			
+			
+			
+			<span class="actionsaddedpanel">
+				<span class="actionsaddedpaneldetail">
+					<img src="images/actions-added-panel.png" alt="actions-added-panel" id="actionsaddedpaneldetailshow" width="373" height="750" />
+				</span>
+			</span>
+			
+			
+			
+            <span class="detailksko">
+         	            	<span class="detailpanelksko">
+	            		<img src="images/ksko-detail.png" alt="ksko-detail" width="632" height="532" id="moreDetail2"/>
+	            	</span>
+            </span>
+            
+            <span class="detailkskoactions">
+           		
+		            <span class="detailactions">
+		            	<img src="images/ksko-actions-detailudemy.png" alt="ksko-actions-detail" width="417" height="430" id="moreAction2" />
+		            </span>
+		            
+		            <span class="detailactionsSecond">
+		            	<img src="images/actSecond.png" alt="ksko-actions-detail" width="662" height="445" usemap="#Map22" />
+		            	
+		            	<map name="Map22">
+							<area shape="rect" coords="492,380,628,430" onclick="openNavTwo()" href="#">
+					    <area shape="rect" coords="1085,16,1242,58" href="revealjs/demo_reveal.html" target="_blank" />
+			</map>
+		            	
+		            	
+		            </span>
+		            
+		            <span class="detailactionsThird">
+		            	<img src="images/actThird.png" alt="ksko-actions-detail" width="662" height="445" usemap="#Map23" />
+		            	
+		            	<map name="Map23">
+							<area shape="rect" coords="492,380,628,430" onclick="openNavTwo()" href="#">
+						</map>
+		            </span>
+		            
+            </span>
+            
+            
+            
+          </map>
+        </div>
+        
+        <div class="top3" id="ksko2"><img src="images/top3.png" alt="top2" width="1248" height="390" usemap="#Map15" border="0" />
+          <map name="Map15" id="Map15">
+            <area shape="rect" coords="345,17,508,58" id="ksko2" href="#" />
+
+            <area shape="rect" coords="1088,14,1242,60" href="revealjs/demo_reveal.html" target="_blank" />
+          </map>
+        </div> 
+		
+
+<!-- top category section -->
+
+<div id="" style="background-color: #F0F0F1; color: #00cc65; width: 500px;
+        padding-left: 25px; padding-top: 10px;">
+        <strong>Codepedia.info</strong><hr/>
+        <h3 style="color: #3e4b51;">
+            Html to canvas, and canvas to proper image
+        </h3>
+        <p style="color: #3e4b51;">
+            <b>Codepedia.info</b> is a programming blog. Tutorials focused on Programming ASP.Net,
+            C#, jQuery, AngularJs, Gridview, MVC, Ajax, Javascript, XML, MS SQL-Server, NodeJs,
+            Web Design, Software</p>
+        <p style="color: #3e4b51;">
+            <b>html2canvas</b> script allows you to take "screenshots" of webpages or parts
+            of it, directly on the users browser. The screenshot is based on the DOM and as
+            such may not be 100% accurate to the real representation.
+        </p>
     </div>
+    <input id="btn-Preview-Image" type="button" value="Preview"/>
+    <a id="btn-Convert-Html2Image" href="#">Download</a>
+    <br/>
+    <h3>Preview :</h3>
+    <div id="previewImage">
+    </div>
+ <!-- -->	
+		
+		
+<div class="sect" id="html-content-holder">
+	<table width="100%">
+		<tr><td><h3 class="catoverview" style="margin:0;">Results by Topic</h3></td>
+		<td align="right">
+			<div class="dropdown">
+  <button class="dropbtn">Sort By </button>
+		  <div class="dropdown-content">
+		    <a id="showhighestscore" href="#ribbonchange">Highest Score</a>
+		    <a id="showmostimproved" href="#ribbonchange">Most Improved vs. Last Survey</a>
+		    <a href="#">Scores vs Company Overall</a>
+		    <a href="#">Scores vs High Performing Companies</a>
+		    <a id="dropdownmultiple" href="#pageTop">Multiple Benchmarks</a>
+		  </div>
+		</div>
+
+		</td>
+		</tr>
+	</table>
+</div>
+
+<!-- RIBBON -->
+<div class="ribbon">
+<ul class="mostimproved">
+    <li class="green1">
+    	<span class="score">89</span>
+    	<span class="category">Pay and Reward</span>
+    	<span class="change pos">+8</span>
+    </li>
+    <li class="green1">
+    	<span class="score">89</span>
+    	<span class="category">Communication</span>
+    	<span class="change pos">+7</span>
+    </li>
+    <li class="opencat2 green1">
+    	<span class="score">79</span>
+    	<span class="category">Training and Development</span>
+    	<span class="change pos">+5</span>
+    </li>
+    <li class="green2 opencat3">
+    	<span class="score">71</span>
+    	<span class="category">Leadership</span>
+    	<span class="change pos">+5</span>
+    </li>
+    <li class="green2">
+    	<span class="score">73</span>
+    	<span class="category">Supportive Culture</span>
+    	<span class="change pos">+2</span>
+    </li>
+    <li class="red1">
+    	<span class="score">83</span>
+    	<span class="category">Customer Focus</span>
+    	<span class="change neg"> - 1</span>
+    </li>
+    <li class="red1">
+    	<span class="score">79</span>
+    	<span class="category">Efficiency</span>
+    	<span class="change neg"> - 3</span>
+    </li>
+    <li class="red2 tooltip">
+    <span class="tooltiptext">
+     	<img src="images/work-cond-hover2x.png" width="805" height="515" />
+     </span>
+    	<span class="score">68</span>
+    	<span class="category">Working Conditions</span>
+    	<span class="change neg"> - 4</span>
+    </li>
+</ul>
+
+<ul class="highestrated">
+	
+    <li class="white">
+    	<span class="score">89</span>
+    	<span class="category">Pay and Reward</span>
+    	
+    </li>
+    <li class="white">
+    	<span class="score">89</span>
+    	<span class="category">Communication</span>
+    
+    </li>
+     <li class="white">
+    	<span class="score">83</span>
+    	<span class="category">Customer Focus</span>
+    	
+    </li>
+    <li class="white">
+    	<span class="score">79</span>
+    	<span class="category">Training and Development</span>
+    	
+    </li>
+    <li class="white">
+    	<span class="score">79</span>
+    	<span class="category">Efficiency</span>
+    	
+    </li>
+    <li class="white">
+    	<span class="score">78</span>
+    	<span class="category">Working Conditions</span>
+    	
+    </li>
+    <li class="white">
+    	<span class="score">73</span>
+    	<span class="category">Supportive Culture</span>
+    	
+    </li>
+    <li class="white">
+    	<span class="score">72</span>
+    	<span class="category">Leadership</span>
+    	
+    </li>
+    
+    
+</ul>
+
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+
+
+
+<!-- COMMENTS -->
+<div class="sect open" id="commentscontainericon">
+	
+	<h3 class="commentsh3" id="comments">Comments</h3>
+	<span class="commentscontainer">
+	
+		<span class="comchart">
+			<img src="images/comment-enqi-themed.png" alt="comments" width="1248" height="502" usemap="#Map8" border="0" />
+            <map name="Map8" id="Map8">
+            	<area shape="rect" coords="11,473,187,497"  onclick="openNav()" href="#" />
+				<area shape="rect" coords="2,3,82,43" id="commentstable" href="#comments" />
+				<area shape="rect" coords="905,299,1040,443" id="commentschartclick" href="#comments" />
+				<area shape="rect" coords="1051,3,1143,43" class="commentsbenchmark" href="#comments" />
+              <area shape="rect" coords="1144,4,1237,41" class="commentsbreakdown" href="#comments" />
+            </map>
+		</span>
+		
+		
+		
+		<span class="comtable">
+			<img src="images/comments-self-theme.png" alt="comments_table" width="1248" height="502" usemap="#Map10" border="0" />
+            <map name="Map10" id="Map10"><area shape="rect" coords="11,4,80,41" id="commentschart" href="#working-condions" />
+              <area shape="rect" coords="8,467,171,500" onclick="openNav()" href="#comments" />
+            </map>
+		</span>
+		
+		<span class="comchartclick">
+			<img src="images/comment-enqi-themed-click.png" alt="comments" width="1248" height="502" usemap="#Map11" border="0" />
+            <map name="Map11" id="Map11">
+            	<area shape="rect" coords="734,451,855,488"  onclick="openNav()" href="#comments" />
+				<area shape="rect" coords="909,296,1044,440" id="commentschart2" href="#comments" />
+				<area shape="rect" coords="12,472,155,499"  onclick="openNav()" href="#comments" />
+				<area shape="rect" coords="1049,4,1143,41" class="commentsbenchmark" href="#comments" />
+				<area shape="rect" coords="1149,6,1244,41" class="commentsbreakdown" href="#comments" />
+            </map>
+		</span>
+		
+		<span class="commentsbenchmarkspan">
+			<img src="images/comments-benchmark.png" alt="comments" width="1248" height="502" usemap="#Map12" border="0" />
+            <map name="Map12" id="Map12">
+            	
+              <area shape="rect" coords="1055,5,1143,40" class="commentsbenchmarkoff" href="#comments" />
+              <area shape="rect" coords="1145,5,1240,41" class="commentsbreakdown" href="#comments" />
+            </map>
+		</span>
+		
+		<span class="commentsbreakdownspan">
+			<img src="images/comment-breakdown.png" alt="comments" width="1248" height="502" usemap="#Map13" border="0" />
+            <map name="Map13" id="Map13">
+            	<area shape="rect" coords="1055,5,1143,38" class="commentsbenchmark" href="#comments" />
+              <area shape="rect" coords="1148,5,1236,38" class="commentsbreakdownoff" href="#comments" />
+            </map>
+		</span>
+	</span>
+</div>
+
+
+<!-- MULTIPLE BENCHMARKS -->
+<div class="sect" id="multcomparecontainer">
+	<h3 class="multcompareh3">Results vs. Benchmarks</h3>
+	
+	<span class="benchmarkcontainer">
+	<span class="multcompare">
+	<img src="images/benchmark-compare-chart.png" alt="benchmark-compare-chart" width="1245" height="480" usemap="#Map1" border="0"   />
+		<map name="Map1" id="Map1">
+	      <area shape="rect" coords="16,142,195,473" id="catdrill" href="#benchmarkcontainer" />
+	      <area shape="rect" coords="110,2,205,39" id="benchtable" href="#benchmarkcontainer" />
+	      <area shape="rect" coords="21,2,107,38" id="benchchart" href="#benchmarkcontainermul" />
+          <area shape="rect" coords="949,4,1042,35" href="revealjs/demo_reveal.html#/7" target="_blank" />
+		</map>
+	</span>
+	
+	<span class="multcomparetable">
+	<img src="images/benchmark-compare-table.png" alt="benchmark-compare-table" width="1245" height="480" usemap="#Map2" border="0"   />
+		<map name="Map2" id="Map2">
+	      <area shape="rect" coords="112,1,204,38" id="benchtable" href="#benchmarkcontainer" />
+	      <area shape="rect" coords="18,2,109,37" id="benchchart" href="#benchmarkcontainer" />
+        </map>
+	</span>
+	
+	<span class="multcompareitems">
+	<img src="images/cat-items.png" alt="cat-items" width="1245" height="430" usemap="#Map3" border="0" />
+		<map name="Map3" id="Map3">
+	      <area shape="rect" coords="11,1,199,41" id="catdrillup" href="#benchmarkcontainer" />
+	    </map>
+	
+	</span>
+	</span>
+</div>
+
+<!-- BREAKDOWNS -->
+<div class="sect" id="benchmark-container">
+	<h3 class="breakdownsh3">Results by Demographics</h3>
+	<span class="benchmark-container">
+		<span class="bench1">
+			<img src="images/breakdown1.png" alt="breakdown1" width="1250" height="500" usemap="#Map" border="0" />
+		    <map name="Map" id="Map">
+		      <area shape="rect" coords="12,60,206,99" id="openbreakdowndrop" href="#benchmark-container" />
+		      <area shape="rect" coords="576,53,663,108" id="drilldeptc" href="#benchmark-container" />
+			  <area shape="rect" coords="13,1,100,39" class="openbenchchart" href="#benchmark-container" />
+			  
+		      <area shape="rect" coords="921,7,1011,38" href="revealjs/demo_reveal.html#/8" target="_blank" />
+		    </map>
+	</span>
+	<span class="bench1b">
+			<img src="images/breakdown1b.png" alt="breakdown1b" width="1250" height="500" usemap="#Map7" border="0" />
+           
+            <map name="Map7" id="Map7">
+              <area shape="rect" id="breakdowndrillup" coords="291,51,386,108" href="#benchmark-container" />
+               <area shape="rect" coords="12,1,102,39" class="openbenchchart" href="#benchmark-container" />
+               <area shape="rect" coords="923,8,1013,40" href="revealjs/demo_reveal.html#/8" target="_blank" />
+            </map>
+	</span>
+		<span class="benchchart">
+			<img src="images/breakdown_chart.png" alt="breakdown1" width="1250" height="500" usemap="#Map1b" border="0" />
+	    <map name="Map1b" id="Map1b">
+		      
+			  <area shape="rect" coords="104,3,191,37" id="openbenchtable" href="#benchmark-container" />
+		    </map>
+		</span>
+		
+		
+		
+		<span class="bench2">
+			<img src="images/breakdown2.png" alt="breakdown2" width="1250" height="500" usemap="#Map4" border="0" />
+		    <map name="Map4" id="Map4">
+			<area shape="rect" coords="360,84,414,128" id="closetenurebreakdown" href="#benchmark-container" />
+		      <area shape="rect" coords="28,227,403,259" id="opentenurebreakdown" href="#benchmark-container" />
+				 <area shape="rect" coords="14,1,103,39" class="openbenchchart2" href="#benchmark-container" />
+		         <area shape="rect" coords="918,6,1010,42" href="revealjs/demo_reveal.html#/8" target="_blank" />
+		    </map>
+		</span>
+		<span class="bench3">
+			<img src="images/breakdown3.png" alt="breakdown3" width="1250" height="500" usemap="#Map5" border="0" />
+		    <map name="Map5" id="Map5">
+		      <area shape="rect" coords="17,90,54,130" id="openlayerdbreakdown" href="#benchmark-container" />
+				 <area shape="rect" coords="13,2,103,38" class="openbenchchart" href="#benchmark-container" />
+		    </map>
+		</span>
+		<span class="bench4">
+			<img src="images/breakdown4.png" alt="breakdown4" width="1250" height="500" usemap="#Map6" border="0" />
+		    <map name="Map6" id="Map6">
+		      <area shape="rect" coords="228,121,258,152" id="closelayerdbreakdown" href="#benchmark-container" />
+		      <area shape="rect" coords="841,432,952,480" id="cell-detail" href="#benchmark-container" />
+				 <area shape="rect" coords="11,2,105,38" class="openbenchchart" href="#benchmark-container" />
+		         <area shape="rect" coords="918,6,1012,43" href="revealjs/demo_reveal.html#/8" target="_blank" />
+		    </map>
+		</span>
+		<span class="bench5">
+			<img src="images/breakdown5.png" alt="breakdown4" width="1250" height="500" usemap="#Map6b" border="0" />
+		    <map name="Map6b" id="Map6b">
+		      <area shape="rect" coords="228,121,258,152" id="closelayerdbreakdown" href="#benchmark-container" />
+		      <area shape="rect" coords="391,148,1239,496" id="cell-detail-close" href="#benchmark-container" />
+				 <area shape="rect" coords="11,2,101,38" class="openbenchchart" href="#benchmark-container" />
+		         <area shape="rect" coords="919,4,1013,43" href="revealjs/demo_reveal.html#/8" target="_blank" />
+		    </map>
+		</span>
+  </span>
+</div>
+
+
+</span> 
+
+
+	</div>
+	<p></p>
+	<p></p>
+
+	<div id="myNav" class="overlay">
+  
+  <div class="overlay-content">
+	  <div class="logo" id="pageTop"><img src="images/header2x.png" alt="header" width="1270" height="52" /></div>
+ <img src="images/comments-popup.png" alt="comments-popup" width="1280" height="1317" usemap="#Map9" border="0" />
+ <map name="Map9" id="Map9">
+   <area shape="rect" coords="8,15,327,71" onclick="closeNav()" href="#" />
+ </map>
   </div>
-  <script src="dist/wow.js"></script>
-  <script>
-    wow = new WOW(
-      {
-        animateClass: 'animated',
-        offset:       100,
-        callback:     function(box) {
-          console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
-        }
-      }
-    );
-    wow.init();
-    document.getElementById('moar').onclick = function() {
-      var section = document.createElement('section');
-      section.className = 'section--purple wow fadeInDown';
-      this.parentNode.insertBefore(section, this);
-    };
-  </script>
+</div>
+
+
+
+<!------------   Training Central ---------------->
+
+
+<div id="myNavTwo" class="overlay">
+  
+  <div class="overlay-content">
+	  <div class="logo" id="pageTop"><img src="images/header2x.png" alt="header" width="1270" height="52" /></div>
+ <img src="images/training-central.png" alt="training center" width="1280" height="1317" usemap="#Map19" border="0" />
+ <map name="Map19" id="Map19">
+   <area shape="rect" coords="8,15,327,71" onclick="closeNavTwo()" href="#" />
+ </map>
+  </div>
+</div>
+
+<!------------   End Training Central ---------------->
+
+	
+<script>
+function openNav() {
+  document.getElementById("myNav").style.height = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.height = "0%";
+}
+</script>
+
+<script>
+function openNavTwo() {
+  document.getElementById("myNavTwo").style.height = "100%";
+}
+
+function closeNavTwo() {
+  document.getElementById("myNavTwo").style.height = "0%";
+  $(".detailactionsThird").hide();
+  $(".detailactionsSecond").hide();
+
+}
+</script>
+
+<script>
+$(window).bind('scroll', function () {
+    if ($(window).scrollTop() > 50) {
+        
+        $('.nodefixedsm').show();
+        $(".chooseReport").hide();
+      
+    } else {
+        
+        $('.nodefixedsm').hide();
+        $(".chooseReport2").hide();
+        
+    }
+});</script>
+
+<script type="text/javascript">
+			$(".nodeinfosm").click(function(){
+				$(".chooseReport").toggle();
+			});
+</script>
+<script type="text/javascript">
+			$(".nodefixedsm").click(function(){
+				$(".chooseReport2").toggle();
+			});
+</script>
+
+
+<!-- This controls the screenshot exporting https://codepedia.info/convert-html-to-image-in-jquery-div-or-table-to-jpg-png/ -->
+<script>
+$(document).ready(function(){
+
+	
+var element = $("#html-content-holder"); // global variable
+var getCanvas; // global variable
+ 
+    $("#btn-Preview-Image").on('click', function () {
+         html2canvas(element, {
+         onrendered: function (canvas) {
+                $("#previewImage").append(canvas);
+                getCanvas = canvas;
+             }
+         });
+    });
+
+	$("#btn-Convert-Html2Image").on('click', function () {
+    var imgageData = getCanvas.toDataURL("image/png");
+    // Now browser starts downloading it instead of just showing it
+    var newData = imgageData.replace(/^data:image\/png/, "data:application/octet-stream");
+    $("#btn-Convert-Html2Image").attr("download", "your_pic_name.png").attr("href", newData);
+	});
+
+});
+
+</script>
+
+
+
 </body>
 </html>
