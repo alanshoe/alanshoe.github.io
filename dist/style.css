@@ -6,7 +6,7 @@ html, body {
 }
 
 body {
-  background-color: #eeeeee;
+  background-color: #FFF;
   font-family: "helvetica", sans-serif;
   font-size: 16px;
   transform: translate3d(0, 0, 0);
@@ -16,8 +16,10 @@ body {
 .kskocontainer {
   position: relative;
   width: 100%;
-  background: linear-gradient(135deg, #2980b9 0%, #9b59b6 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#1e5799", endColorstr="#7db9e8",GradientType=1 );
+  /** background: linear-gradient(135deg, #2980b9 0%, #9b59b6 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#1e5799", endColorstr="#7db9e8",GradientType=1 ); **/
+  
+  background: #EFEFEF;
  
   margin: 0px auto;
   padding: 20px;
@@ -39,7 +41,7 @@ body {
   transform-style: preserve-3d;
   transform: rotatey(0deg) translatex(0px) translatey(0px);
   transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
   margin: 5px;
   cursor: pointer;
 }
@@ -61,18 +63,19 @@ body {
 
 
 .improvebutton {
-	margin: 10px;
+	margin: 10px 3px;
 	background: #FFFFFF;
-border: 1px solid #CBCBCB;
-border-radius: 7px;
-text-align: center;
-color: #007FA7;
+	text-align: center;
+	color: #007FA7;
+	width: 266px;
+	box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
 }
 .improvebutton a{
 	
 color: #007FA7;
 display: block;
 padding: 20px;
+text-decoration: none;
 }
 
 .element-card .front-facing {
@@ -83,7 +86,7 @@ padding: 20px;
   bottom: 0;
   right: 0;
   padding: 5px;
-  background-color: #ecf0f1;
+  background-color: #FFF;
   border: 2px white solid;
   border-radius: 5px;
 }
@@ -100,7 +103,7 @@ padding: 20px;
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: #ecf0f1;
+  background-color: #FFF;
   border: 2px white solid;
   border-radius: 5px;
   padding: 20px;
